@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'quiz_brain.dart';
 
 QuizBrain quizBrain = QuizBrain();
@@ -34,6 +35,11 @@ class _QuizPageState extends State<QuizPage> {
     bool correctAnswer = quizBrain.getQuestionAnswer();
 
     if (quizBrain.isFinished()) {
+      Alert(
+              context: context,
+              title: "It's Done!",
+              desc: "You have finished the quiz 👏")
+          .show();
       return;
     }
 
